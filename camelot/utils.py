@@ -542,6 +542,8 @@ def flag_font_size(textline, direction, strip_text=""):
             for t in textline
             if not isinstance(t, LTAnno)
         ]
+    d = list(filter(lambda x: x[0] != strip_text, d))
+    d = list(filter(lambda x: x[0] != ' ', d))
     l = [np.round(size, decimals=6) for text, size in d]
     if len(set(l)) > 1:
         flist = []
